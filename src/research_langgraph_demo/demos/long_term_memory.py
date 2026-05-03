@@ -19,15 +19,11 @@ Real LangGraph pattern:
 """
 from typing import Annotated, TypedDict
 
-from research_langgraph_demo.llm import llm_generate, HAS_GEMINI
+from research_langgraph_demo.llm import llm_generate
 
-try:
-    from langgraph.store.memory import InMemoryStore
-    from langgraph.checkpoint.memory import MemorySaver
-    from langgraph.graph import StateGraph, START, END
-    HAS_LANGGRAPH = True
-except ImportError:
-    HAS_LANGGRAPH = False
+from langgraph.store.memory import InMemoryStore
+from langgraph.checkpoint.memory import MemorySaver
+from langgraph.graph import StateGraph, START, END
 
 
 # -- State --
@@ -99,14 +95,6 @@ def build_recall_graph(store, saver):
 
 
 def run_demo() -> None:
-    if not HAS_GEMINI:
-        raise RuntimeError(
-            "This demo requires a real LLM. Set GOOGLE_API_KEY and install langchain-google-genai."
-        )
-    if not HAS_LANGGRAPH:
-        raise RuntimeError(
-            "This demo requires langgraph. Install it with: pip install langgraph"
-        )
 
     # Shared store (cross-thread) and checkpointer (per-thread)
     store = InMemoryStore()
