@@ -24,7 +24,7 @@ try:
     # Primary: Gemini via langchain-google-genai
     from langchain_google_genai import ChatGoogleGenerativeAI  # type: ignore
 
-    def get_llm(google_api_key: Optional[str] = None, model: str = "gemini-2.0-flash", temperature: float = 0.0):
+    def get_llm(google_api_key: Optional[str] = None, model: str = "gemini-2.5-flash", temperature: float = 0.0):
         key = google_api_key or os.getenv("GOOGLE_API_KEY")
         if not key:
             raise RuntimeError("GOOGLE_API_KEY not set; cannot create real Gemini LLM instance")

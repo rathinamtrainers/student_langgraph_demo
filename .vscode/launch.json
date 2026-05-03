@@ -26,7 +26,8 @@
                 "persistence",
                 "human_in_the_loop",
                 "multi_agent",
-                "streaming"
+                "streaming",
+                "prebuilt_components"
             ],
             "default": "core_concepts"
         }
