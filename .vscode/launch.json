@@ -1,18 +1,34 @@
-  {
-      "version": "0.2.0",
-      "configurations": [
-
-          {
-              "name": "Demo 7: Streaming",
-              "type": "debugpy",
-              "request": "launch",
-              "module": "research_langgraph_demo.demos.streaming",
-              "env": {
-                  "PYTHONPATH": "src"
-              },
-              "cwd": "${workspaceFolder}"
-          }          
-      ]
-  }
-
-  
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Demo (pick)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "research_langgraph_demo.demos.${input:demoModule}",
+            "env": {
+                "PYTHONPATH": "src"
+            },
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        }
+    ],
+    "inputs": [
+        {
+            "id": "demoModule",
+            "type": "pickString",
+            "description": "Which demo to debug?",
+            "options": [
+                "core_concepts",
+                "state_management",
+                "control_flow",
+                "persistence",
+                "human_in_the_loop",
+                "multi_agent",
+                "streaming"
+            ],
+            "default": "core_concepts"
+        }
+    ]
+}
