@@ -1,0 +1,18 @@
+  {
+      "version": "0.2.0",
+      "configurations": [
+
+          {
+              "name": "Demo 7: Streaming",
+              "type": "debugpy",
+              "request": "launch",
+              "module": "research_langgraph_demo.demos.streaming",
+              "env": {
+                  "PYTHONPATH": "src"
+              },
+              "cwd": "${workspaceFolder}"
+          }          
+      ]
+  }
+
+  

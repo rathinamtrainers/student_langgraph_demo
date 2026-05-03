@@ -1,0 +1,13 @@
+# Core dependencies
+python-dotenv>=1.0.0
+langchain-core>=1.2.0
+langgraph>=1.1.0
+langgraph-checkpoint>=4.0.0
+langgraph-prebuilt>=1.0.0
+
+# LLM provider (required for real LLM calls)
+langchain-google-genai>=4.0.0
+
+# Observability
+langsmith>=0.7.0
+
