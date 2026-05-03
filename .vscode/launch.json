@@ -27,7 +27,8 @@
                 "human_in_the_loop",
                 "multi_agent",
                 "streaming",
-                "prebuilt_components"
+                "prebuilt_components",
+                "long_term_memory"
             ],
             "default": "core_concepts"
         }
